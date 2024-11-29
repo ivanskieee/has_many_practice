@@ -1,0 +1,11 @@
+<h1>Blogs</h1>
+<%= link_to 'New Blog', new_blog_path %>
+<ul>
+  <% @blogs.each do |blog| %>
+    <li>
+      <%= link_to blog.title, blog_path(blog) %><br>
+      <%= link_to 'Edit', edit_blog_path(blog) %>
+      <%= link_to 'Delete', blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
